@@ -1,0 +1,56 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  width: 80%;
+  height: 60%;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: space-evenly;
+}
+div {
+  width: 20%;
+  height: 40%;
+  background-color: red;
+}
+div:nth-child(even) {
+  animation: moveDown 5s infinite;
+  border-radius: 30px;
+  background-color: yellow;
+  border: 1px solid red;
+}
+div:nth-child(odd) {
+  border: 1px solid yellow;
+  animation: moveUp 5s infinite;
+}
+@keyframes moveDown {
+  from {
+    opacity: 0;
+    transform: translateY(-5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+@keyframes moveUp {
+  from {
+    opacity: 0;
+    transform: translateY(5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+@media only screen and (max-width: 480px) {
+  div {
+    width: 40%;
+    height: 20%;
+  }
+}
